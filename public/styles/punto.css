@@ -1,0 +1,452 @@
+:root{
+    --blanco: #ffffff;
+    --blanco-hover: #ffffff7c;
+    --oscuro: #212121;
+    --gris: #9e9e9e5b;
+    --primario: #72BF24;
+    --primario-trans: #71bf247c;
+    --secundario: #0477BF;
+    --principal: #2D3073;
+    --principal-trans:#2d3073df;
+    --azulchillon: #5600cf;
+    --fuente-principal:#;
+    
+}
+
+html{ 
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-snap-type:  y mandatory;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body{
+    font-size: 16px;
+    font-family: "Krub", sans-serif;
+}
+.header1{
+    background-color: var(--primario);
+    width: 100%;
+    height: 4rem;
+}
+header{
+    background-color: var(--principal);
+    width: 100%;
+    height: 6rem;
+}
+.menu{
+    margin-top: .5rem;
+    margin-right: 1rem;
+    width: 4rem;
+}
+.cerrar{
+    margin-top: .5rem;
+    width: 2rem;
+    
+}
+.a-remember{
+    margin-top: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.a-remember a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.a-remember a:hover{
+    color: var(--secundario);
+}
+.menu-a{
+    margin-top: .5rem;
+    margin-left: 1rem;
+    width: 4rem;
+}
+.menu-a:hover{
+    transform: scale(1.1);
+    transition: 1.1ms;
+}
+.drink-img{
+    width: 100px;
+    height: 100px;
+}
+.food-img{
+    width: 100px;
+    height: 100px;
+}
+.menu-completo{
+    margin-left: 80px;
+}
+.menu-completo .alimentos-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.menu-completo .alimentos-list .food-item{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-completo .bebidas-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.menu-completo .bebidas-list .drink-item{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.cerrar:hover{
+    transform: scale(1.1);
+    transition: 1.1ms;
+}
+.contenedor1{
+    display: flex;
+    justify-content: space-between;
+}
+@media (min-width: 768px) {
+    
+}
+.formulario{
+    background-color: var(--principal-trans);
+    width: min(40rem, 80rem); /** min utiliza el valor mas menor**/
+    margin: 0 auto;
+    margin-top: 10rem;
+    border-radius: 1rem;
+    margin-bottom: 30rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    
+}
+.formulario fieldset{
+    border: none;
+}
+.formulario legend{
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    
+}
+fieldset legend{
+    padding-top: 2rem;
+}
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        
+        
+    }
+}
+@media (min-width: 768px) {
+    .contenedor-campos2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .campo2{
+        grid-row: 2 / 3;
+    }
+    
+}
+.campo{
+    margin-bottom: 1rem;
+}
+.campo2{
+    justify-content: right;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.checkbox-text{
+    color: var(--blanco);
+}
+.campo textarea{
+    height: 20rem;
+}
+.forgot{
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+
+.remember{
+    justify-content: center;
+    margin-top: 1rem;
+}
+.boton-ticket {
+    height: 5rem;
+    border-radius: 0.9rem;
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--blanco);
+    width: 90%;
+    text-align: center;
+    border: none;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
+    background-color: var(--blanco);
+    color: var(--oscuro);
+}
+/**Utilidades**/
+.w-100{
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-100{
+        width: auto;
+    }
+}
+.flex{
+    display: flex;
+}
+.header1{
+    background-color: var(--primario);
+    width: 100%;
+    height: 4rem;
+}
+header{
+    background-color: var(--principal);
+    width: 100%;
+    height: 6rem;
+}
+.menu{
+    margin-top: .5rem;
+    margin-right: 1rem;
+    width: 4rem;
+}
+.cerrar{
+    margin-top: .5rem;
+    width: 2rem;
+    
+}
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 4rem; /* Ajusta según la altura de tu header */
+    left: 0; /* Inicialmente oculto fuera de la pantalla */
+    width: 20rem;
+    background-color: var(--secundario);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out; /* Transición suave */
+    bottom: 0;
+    z-index: 10000;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-list li {
+    padding-bottom: 3rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem;
+    display: block;
+    
+}
+
+.nav-list li a:hover{
+    background-color: var(--blanco);
+    width: 100%;
+    color: var(--oscuro);
+}
+.close-menu {
+    cursor: pointer;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--oscuro);
+    display: block;
+    width: 4rem;
+    margin-left: 16rem;
+    text-align: center;
+    
+}
+
+.menu-open .nav {
+    display: flex;
+}
+.menu-open .nav {
+    transform: translateX(0); /* Muestra el menú */
+}
+main{
+    display: grid;
+    height: 100%;
+    grid-template-columns: 60rem 20rem 2fr;
+    grid-template-rows: 62.9rem 0;
+    gap:0;
+}
+
+.datos{
+    margin-top: -17rem;
+    width: 60rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto;
+    color: var(--azulchillon);
+    grid-template-rows: 1rem 10rem 10rem;
+
+}
+.datos button{
+    grid-column: 3 / 5;
+}
+.datos label{
+    height: 3rem;
+    align-self: center;
+}
+.datos input{
+    height: 3rem;
+    width: 10rem;
+    align-self: center;
+}
+.datos p{
+    height: 3rem;
+    align-self: center;
+}
+main .carro{
+    width: 60rem;
+    height: 30rem;
+    grid-column: 1 / 2;
+    
+}
+main .carro .table{
+    width: 100%;
+    table-layout: fixed;
+    background-color: var(--blanco-hover);
+    border-collapse: collapse;
+}
+main .carro .table th,td{
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+td:hover, td:focus {
+    overflow: visible;
+    white-space: normal;
+}
+td {
+    position: relative;
+}
+td:focus {
+    outline: none; /* Remover el borde de enfoque por defecto */
+}
+main .menu-completo{
+    background-color: var(--blanco);
+    width: 100%;
+    height: 62.8rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    grid-row: 1 /2;
+    grid-column: 3 / 4;
+}
+main .menu-interactivo{
+    margin-top: 0rem;
+    background-color: var(--principal);
+    width: 100%;
+    grid-row: 1 /2;
+    grid-column: 2 / 3;
+}
+main .menu-interactivo .menu-a-c{
+    background-color: var(--gris);
+
+
+}
+.menu-interactivo a{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    color: var(--oscuro);
+    background-color: var(--primario);
+    text-decoration: none;
+    width: 17rem;
+    margin-left: 1.5rem;
+    align-items: center;
+}
+.menu-interactivo .a-menu:hover{
+    background-color: var(--principal);
+    border: 2px solid var(--primario);
+    color: var(--primario);
+}
+input{
+    width: 30rem;
+}
+.a-menu{
+    width: 100%;
+    margin-bottom: 2rem;
+    background-color: var(--gris);
+    padding: 3rem;
+    border-radius: 2rem;
+}
+.food-button{
+    background-color: transparent;
+    color: var(--oscuro);
+    border:none;
+    margin: 0 auto;
+}
+.food-button:hover{
+    background-color: var(--gris);
+}
+
+.drink-button{
+    background-color: transparent;
+    color: var(--oscuro);
+    border:none;
+    margin: 0 auto;
+}
+.drink-button:hover{
+    background-color: var(--gris);
+}
+button{
+    cursor: pointer;
+    background-color: var(--principal);
+    color: var(--blanco);
+}
+button:hover{
+    cursor: pointer;
+    background-color: var(--primario);
+    color: var(--oscuro);
+}
+.text-input {
+    border-radius: 1rem;
+    background-color: var(--gris);
+    color: var(--azulchillon);
+}
+.contenedor1 .usuario{
+    color: var(--blanco);
+    text-align: center;
+    
+}

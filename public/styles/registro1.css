@@ -1,0 +1,261 @@
+:root{
+    --blanco: #ffffff;
+    --blanco-hover: #ffffff7c;
+    --oscuro: #212121;
+    --primario: #72BF24;
+    --secundario: #0477BF;
+    --principal: #2D3073;
+    --principal-trans:#2d3073df;
+    --fuente-principal:#;
+    
+}
+
+html{ 
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-snap-type:  y mandatory;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    font-size: 16px;
+    font-family: "Krub", sans-serif;
+    background-image: url(https://utcalvillo.edu.mx/usermedia/images/4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 85rem;
+}
+.flex{
+    display: flex;
+}
+.header1{
+    background-color: var(--primario);
+    width: 100%;
+    height: 4rem;
+}
+header{
+    background-color: var(--principal);
+    width: 100%;
+    height: 6rem;
+}
+.menu{
+    margin-top: .5rem;
+    margin-right: 1rem;
+    width: 4rem;
+}
+.cerrar{
+    margin-top: .5rem;
+    width: 2rem;
+    
+}
+.nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 4rem; /* Ajusta según la altura de tu header */
+    left: 0; /* Inicialmente oculto fuera de la pantalla */
+    width: 20rem;
+    background-color: var(--secundario);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-out; /* Transición suave */
+    bottom: 0;
+    z-index: 10000;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-list li {
+    padding-bottom: 3rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 1rem;
+    display: block;
+    
+}
+
+.nav-list li a:hover{
+    background-color: var(--blanco);
+    width: 100%;
+    color: var(--oscuro);
+}
+.close-menu {
+    cursor: pointer;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--oscuro);
+    display: block;
+    width: 4rem;
+    margin-left: 16rem;
+    text-align: center;
+    
+}
+
+.menu-open .nav {
+    display: flex;
+}
+.menu-open .nav {
+    transform: translateX(0); /* Muestra el menú */
+}
+.a-remember{
+    margin-top: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.a-remember a {
+    text-decoration: none;
+    color: var(--blanco);
+}
+
+.a-remember a:hover{
+    color: var(--secundario);
+}
+.menu-a{
+    margin-top: .5rem;
+    margin-right: 1rem;
+    padding-left: 1rem;
+    width: 4rem;
+}
+.menu-a:hover{
+    transform: scale(1.1);
+    transition: 1.1ms;
+}
+.contenedor1{
+    display: flex;
+    justify-content: left;
+}
+@media (min-width: 768px) {
+    
+}
+.formulario{
+    background-color: var(--principal-trans);
+    width: min(40rem, 80rem); /** min utiliza el valor mas menor**/
+    margin: 0 auto;
+    margin-top: 10rem;
+    border-radius: 1rem;
+    margin-bottom: 30rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    
+}
+.formulario fieldset{
+    border: none;
+}
+.formulario legend{
+    color: var(--blanco);
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    
+}
+fieldset legend{
+    padding-top: 2rem;
+}
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        
+        
+    }
+}
+@media (min-width: 768px) {
+    .contenedor-campos2{
+        display: flex;
+        justify-content: center;
+    }
+
+    .campo2{
+        grid-row: 2 / 3;
+    }
+    
+}
+.campo{
+    margin-bottom: 1rem;
+}
+.campo2{
+    justify-content: right;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+}
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+.checkbox-text{
+    color: var(--blanco);
+}
+.campo textarea{
+    height: 20rem;
+}
+.forgot{
+    justify-content: center;
+    margin-top: 2rem;
+    
+}
+
+.remember{
+    justify-content: center;
+    margin-top: 1rem;
+}
+.boton{
+    background-color: var(--secundario);
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 4rem;
+    border-radius: .5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--blanco);
+    width: 90%;
+    text-align: center;
+    border: none;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .boton{
+        width: auto;
+    }
+}
+.boton:hover{
+    cursor: pointer;
+    background-color: var(--blanco);
+    color: var(--oscuro);
+}
+/**Utilidades**/
+.w-100{
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .w-100{
+        width: auto;
+    }
+}
+
+
+/** Footer **/
+.footer{
+    background-color: var(--primario);
+    width: 100%;
+    height: 4rem;
+}

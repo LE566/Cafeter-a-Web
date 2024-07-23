@@ -1,0 +1,115 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+
+// Seteamos urlencoded para capturar datos
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// Invocamos dotenv
+const dotenv = require('dotenv');
+dotenv.config({ path: './env/.env' });
+
+// Directorio público
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+
+
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
+
+// Invocamos bcryptjs
+const bcrypt = require('bcryptjs');
+
+// Variable de sesión
+const session = require('express-session');
+app.use(session({
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: true
+}));
+
+// Invocar conexión
+const connection = require('./database/db');
+const { error } = require('console');
+
+// Ruta para la página principal
+app.get('/', (req, res) => {
+    res.render('index', {msg:'Este es un msj de node'}); 
+});
+app.get('/registro', (req, res) => {
+    res.render('registro'); 
+});
+
+app.get('/index', (req, res) => {
+    res.render('index'); 
+});
+
+
+app.get('/punto', (req, res) => {
+    res.render('punto'); 
+});
+
+//Hacemos el registro
+
+// Ruta para registrar usuario
+app.post('/registro', async (req, res) => {
+    const { correo, pass } = req.body;
+
+    connection.query('INSERT INTO login SET ?', { correo: correo, pass: pass }, (error, results) => {
+        if (error) {
+            console.error('Error en la consulta de registro:', error);
+            res.status(500).send('Error en el registro');
+        } else {
+            res.redirect('/index');
+        }
+    });
+});
+
+// Ruta para el login
+app.post('/index', async (req, res) => {
+    const { correo, pass } = req.body;
+
+    if (correo && pass) {
+        console.log(`Correo: ${correo}`);
+        console.log(`Contraseña: ${pass}`);
+
+        connection.query('SELECT * FROM login WHERE correo = ?', [correo], (error, results) => {
+            if (error) {
+                console.error('Error en la consulta de login:', error);
+                res.status(500).send('Error en el servidor');
+                return;
+            }
+
+            if (results.length === 0 || results[0].pass !== pass) {
+                console.log('Login fallido');
+                console.log(results);
+                res.status(401).send('Correo y/o contraseña incorrectas');
+            } else {
+                console.log('Login exitoso');
+                req.session.user = { correo: results[0].correo };
+                res.redirect('/punto');
+            }
+        });
+    } else {
+        res.status(400).send('Correo y contraseña son requeridos');
+    }
+});
+
+app.get('/get-data', (req, res) => {
+    connection.query('SELECT id_producto, cantidad_producto, nombre_producto, precio_producto, total_precio FROM carrito', (err, results) => {
+      if (err) {
+        console.error('Error fetching data:', err);
+        res.status(500).send('Server Error');
+        return;
+      }
+      res.json(results);
+    });
+  });
+// Ruta para cerrar sesion
+
+
+
+app.listen(3000, () => {
+    console.log('Servidor prendido en http://localhost:3000');
+});

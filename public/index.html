@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="./styles/normalize.css" as="styles">
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="preload" href="./styles/style.css" as="styles">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="header1"></div>
+    <header>
+        <div class="contenedor1">
+            <a href="" class="menu-a">
+                <img class="menu" src="./styles/img/menu_p.png" alt="menu">
+            </a>
+            <img src="" alt="">
+        </div>
+        <nav class="nav">
+            <a class="close-menu"><img class="cerrar" src="./styles/img/x.png" alt=""></a>
+            <ul class="nav-list">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <form action="/auth" class="formulario" method="post">
+        <fieldset>
+            <legend>Login</legend>
+            <div class="contenedor-campos">
+                
+                <div class="campo">
+                    <label for="">Email</label>
+                    <input class="input-text" type="email" id="correo" placeholder="Your Email" name="correo" required>
+                </div>
+
+
+                <div class="campo">
+                    <label for="">Password</label>
+                    <input class="input-text" type="password" id="pass" placeholder="Your password" name="pass" required>
+                </div>
+            </div>
+            
+                <div class="remember flex">
+                    <input class="input-check" type="checkbox" value="Remember">
+                    <span class="checkbox-text">Remember me</span>
+                </div>
+
+            <div class="contenedor-campos2">
+                <div class="alinear-derecha flex campo1" >
+                    <button class="boton w-100 " type="submit" id="login">Login</button>
+                </div><!--Contenedor de los campos-->
+
+            </div>
+            <div class="a-remember flex">
+                <a href="./src/punto.html">Forget my Password</a><br><br>
+            </div>
+
+            <div class="a-remember flex">
+                <a href="./register.html">You do not have an account? Sign up</a>
+
+            </div>
+        </fieldset>
+    </form>
+    <footer class="footer">
+        <div class="Preguntas">
+            <h4>Preguntas o Quejas</h4>
+            <p>Buzon Digital UTC</p>
+        </div>
+
+        <div class="redes">
+            <h4>Redes Sociales</h4>
+        </div>
+
+    </footer>
+
+   
+    
+    <script src="./js/main.js"></script>
+    <script src="./js/login.js"></script>
+    
+</body>
+</html>
