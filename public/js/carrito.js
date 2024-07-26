@@ -24,3 +24,5 @@ function fetchData() {
             fetchData();  // Initial fetch
             setInterval(fetchData, 5000);  // Fetch data every 5 seconds
         });
+
+

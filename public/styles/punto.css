@@ -75,6 +75,11 @@ header{
     width: 100px;
     height: 100px;
 }
+
+.snack-img{
+    width: 100px;
+    height: 100px;
+}
 .menu-completo{
     margin-left: 80px;
 }
@@ -92,6 +97,15 @@ header{
     grid-template-columns: auto auto auto;
 }
 .menu-completo .bebidas-list .drink-item{
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.menu-completo .snacks-list {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.menu-completo .snacks-list .snack-item{
     margin-top: 5px;
     margin-bottom: 15px;
 }
@@ -428,6 +442,16 @@ input{
     margin: 0 auto;
 }
 .drink-button:hover{
+    background-color: var(--gris);
+}
+
+.snack-button{
+    background-color: transparent;
+    color: var(--oscuro);
+    border:none;
+    margin: 0 auto;
+}
+.snack-button:hover{
     background-color: var(--gris);
 }
 button{

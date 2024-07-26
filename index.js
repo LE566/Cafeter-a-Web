@@ -36,15 +36,9 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/register.html')); 
 });
 
-app.get('/user-info', (req, res) => {
-    if (req.session.loggedin) {
-        res.json({ name: req.session.name });
-    } else {
-        res.status(401).json({ error: 'Not logged in' });
-    }
-});
+
 app.get('/get-data', (req, res) => {
-    db.query('SELECT id_producto, cantidad_producto, nombre_producto, precio_producto, total_precio FROM carrito', (err, results) => {
+    db.query('SELECT * FROM carrito', (err, results) => {
       if (err) {
         console.error('Error fetching data:', err);
         res.status(500).send('Server Error');
@@ -53,6 +47,7 @@ app.get('/get-data', (req, res) => {
       res.json(results);
     });
   });
+
 
 // Definimos el puerto de escucha
 const port = 3000;
