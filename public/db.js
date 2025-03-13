@@ -20,5 +20,6 @@ db.connect((error)=>{
     }
     // Si hay conexion
     console.log('CONECTADOOOOO');
+    
 });
 module.exports = db;
